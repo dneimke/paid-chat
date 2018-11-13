@@ -1,4 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+# Use git rm --cached -r src/environments to remove all tracked files from the environments folder 
+
+src/environments
 
 # compiled output
 /dist
@@ -7,6 +10,7 @@
 
 # dependencies
 /node_modules
+/functions/node_modules
 
 # IDEs and editors
 /.idea
