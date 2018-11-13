@@ -9,6 +9,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import * as fromServices from '../app/services';
+
 const routes: Routes = [];
 
 @NgModule({
@@ -22,7 +24,7 @@ const routes: Routes = [];
     AngularFirestoreModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [...fromServices.services],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
