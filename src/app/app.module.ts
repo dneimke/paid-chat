@@ -10,12 +10,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import * as fromServices from '../app/services';
+import * as fromContainers from './containers';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: fromContainers.HomeComponent },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ...fromContainers.containers
   ],
   imports: [
     BrowserModule,
@@ -23,6 +29,7 @@ const routes: Routes = [];
     AngularFireAuthModule,
     AngularFirestoreModule,
     RouterModule.forRoot(routes),
+    NgbModule.forRoot(),
   ],
   providers: [...fromServices.services],
   bootstrap: [AppComponent]
