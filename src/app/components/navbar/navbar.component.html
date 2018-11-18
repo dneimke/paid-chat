@@ -1,28 +1,41 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="container">
 
-  <a class="navbar-brand" href="/">PaidChat</a>
+        <a class="navbar-brand" routerLink="/home" routerLinkActive="active">PaidChat</a>
+  
+        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
   
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item"><a class="nav-item nav-link" href="#">About</a></li>
-      <li class="nav-item">
-        <a class="nav-item nav-link" href="#">Contact</a>
-      </li>
-    </ul>
-  </div>
+  
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-item nav-link" routerLink="/resources" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" routerLink="/resources" routerLinkActive="active">Resources</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+          </li>
+      </ul>
+
+      <div ngbDropdown>
+          <img [src]="profilePicUrl" style="height: 40px; width: 40px; padding-top: 1px" ngbDropdownToggle />
+          <div ngbDropdownMenu>
+              <a class="dropdown-item" href="">User</a>
+              <a class="dropdown-item" href="">Login</a>
+          </div>
+        </div>
+    </div>
 
 
-  <div ngbDropdown style="margin-right: 20px">
-      <img [src]="profilePicUrl" style="height: 40px; width: 40px; padding-top: 1px" ngbDropdownToggle />
-      <div ngbDropdownMenu>
-          <a class="dropdown-item" href="">User</a>
-          <a class="dropdown-item" href="">Login</a>
-      </div>
+    
+
     </div>
 </nav>
