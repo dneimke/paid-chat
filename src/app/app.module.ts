@@ -9,10 +9,13 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import * as fromServices from '../app/services';
 import * as fromContainers from './containers';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import * as fromComponents from './components';
+
 
 const routes: Routes = [
   { path: 'home', component: fromContainers.HomeComponent },
@@ -23,7 +26,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ...fromContainers.containers
+    ...fromContainers.containers,
+    ...fromComponents.components
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
