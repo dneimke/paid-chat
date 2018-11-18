@@ -1,23 +1,28 @@
-<nav class="navbar navbar-dark bg-dark mb-5">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <a class="navbar-brand" href="/">PaidChat</a>
-  <div class="navbar-expand mr-auto">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home</a>
-      <a class="nav-item nav-link" href="#">About</a>
-      <a class="nav-item nav-link" href="#">Contact</a>
-    </div>
+
+  
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item"><a class="nav-item nav-link" href="#">About</a></li>
+      <li class="nav-item">
+        <a class="nav-item nav-link" href="#">Contact</a>
+      </li>
+    </ul>
   </div>
-  <div class="navbar-expand ml-auto navbar-nav">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="https://github.com/dneimke/paid-chat" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://twitter.com/digory" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://medium.com/@dneimke" target="_blank">
-        <i class="fab fa-medium"></i>
-      </a>
+
+
+  <div ngbDropdown style="margin-right: 20px">
+      <img [src]="profilePicUrl" style="height: 40px; width: 40px; padding-top: 1px" ngbDropdownToggle />
+      <div ngbDropdownMenu>
+          <a class="dropdown-item" href="">User</a>
+          <a class="dropdown-item" href="">Login</a>
+      </div>
     </div>
-  </div>
 </nav>

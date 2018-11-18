@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public profilePicUrl = 'https://avatars3.githubusercontent.com/u/720792?s=40&v=4';
+
   constructor() { }
 
   ngOnInit() {
