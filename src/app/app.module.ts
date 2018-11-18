@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { environment } from '../environments/environment';
@@ -14,8 +15,9 @@ import * as fromContainers from './containers';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: fromContainers.HomeComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
+  { path: '**', component: fromContainers.PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -24,12 +26,15 @@ const routes: Routes = [
     ...fromContainers.containers
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    RouterModule.forRoot(routes),
-    NgbModule.forRoot(),
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: false }
+    ),
+    NgbModule.forRoot()
   ],
   providers: [...fromServices.services],
   bootstrap: [AppComponent]
