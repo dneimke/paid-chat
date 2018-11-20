@@ -1,0 +1,19 @@
+
+
+
+<div ngbDropdown *ngIf="loggedIn else signIn">
+  <img [src]="profilePicUrl" style="height: 40px; width: 40px; padding-top: 1px" ngbDropdownToggle />
+  <div ngbDropdownMenu>
+      <a class="dropdown-item" routerLink="user">User</a>
+      
+      <a class="dropdown-item" routerLink="user/signout">Signout</a>
+  </div>
+</div>
+
+<ng-template #signIn>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li>
+          <a class="dropdown-item" routerLink="user/login">Login</a>
+      </li>
+    </ul>
+</ng-template>

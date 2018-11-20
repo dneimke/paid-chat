@@ -15,11 +15,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as fromServices from '../app/services';
 import * as fromContainers from './containers';
 import * as fromComponents from './components';
+import { UserModule } from './user/user.module';
 
 
 const routes: Routes = [
   { path: 'home', component: fromContainers.HomeComponent },
   { path: '', pathMatch: 'full', redirectTo: '/home' },
+  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule'
+  },
   { path: '**', component: fromContainers.PageNotFoundComponent }
 ];
 
@@ -38,6 +43,7 @@ const routes: Routes = [
       routes,
       { enableTracing: false }
     ),
+    UserModule,
     NgbModule.forRoot()
   ],
   providers: [...fromServices.services],
